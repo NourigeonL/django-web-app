@@ -115,3 +115,8 @@ INSTALLED_APPS = [
     'listings', # application name
 ]
 ```
+
+---
+## Next Step : [Serve content using a view](./create_view.md#serve-content-using-a-view)
+
+[back to menu](../README.md#django-tutorial)

@@ -42,3 +42,9 @@ urlpatterns = [
 Let's try our new view (don't forget to run the server by using **python manage.py runserver**): [http://localhost:8000/hello/](http://localhost:8000/hello/)
 
 ![Hello Django! page](./images/helloDjangoPage.PNG)
+
+---
+
+## Next Step : [Serve content using a view](./create_view.md#serve-content-using-a-view)
+### Previous step : [Getting Started](./getting_started.md#getting-started)
+### [Back to menu](../README.md#django-tutorial)
