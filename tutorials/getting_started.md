@@ -60,7 +60,7 @@ python manage.py runserver
 
 Try the server by going to [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
-![successfully installed Django project](images\install_successfull.PNG)
+![successfully installed Django project](./images/install_successfull.PNG)
 
 Stop the server by using Ctrl+C
 
@@ -93,7 +93,7 @@ python manage.py migrate
 
 You can see that Django already created tables in the database:
 
-![dabatase tables created by Django](images\djangoMysqlDB.PNG)
+![dabatase tables created by Django](./images/djangoMysqlDB.PNG)
 
 
 # Create a Django application to the project
