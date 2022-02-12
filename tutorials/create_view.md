@@ -43,8 +43,34 @@ Let's try our new view (don't forget to run the server by using **python manage.
 
 ![Hello Django! page](./images/helloDjangoPage.PNG)
 
+Let's create path for a *about-us* view:
+- In merchex/urls.py:
+  ```python
+  urlpatterns = [
+      path('admin/', admin.site.urls),
+      path('hello/', views.hello),
+      path('about-us/', views.about), # add this line
+  ]
+  ```
+- In listings/views.py:
+  ```python
+  from django.http import HttpResponse
+  from django.shortcuts import render
+
+  def hello(request):
+      return HttpResponse('<h1>Hello Django !</h1>')
+
+  # add this function
+  def about(request):
+      return HttpResponse('<h1>About us</h1> <p>We love merch !</p>')
+  ```
+
+Try the new views : [http://localhost:8000/about-us/](http://localhost:8000/about-us/)
+
+![about-us page](./images/about-usPage.PNG)
+
 ---
 
-## Next Step : [Serve content using a view](./create_view.md#serve-content-using-a-view)
+## Next Step : [Save data to a database with a model and a migration](./model_migration.md#save-data-to-a-database-with-a-model-and-a-migration)
 ### Previous step : [Getting Started](./getting_started.md#getting-started)
 ### [Back to menu](../README.md#django-tutorial)
