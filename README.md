@@ -19,3 +19,11 @@ This tutorial is a summary of [this tutorial](https://openclassrooms.com/fr/cour
     5. [Update the view to show *Band* objects](./tutorials/model_migration.md#update-the-view-to-show-band-objects)
     6. [Time to Practice : Create new model!](./tutorials/model_migration.md#time-to-practice--create-new-model)
 4. [Separate the application logic from the presentation with a Django template](./tutorials/template.md#separate-the-application-logic-from-the-presentation-with-a-django-template)
+    1. [Understand templates](./tutorials/template.md#understand-templates)
+    2. [Add an HTML template file to the templates directory](./tutorials/template.md#add-an-html-template-file-to-the-templates-directory)
+    3. [Update the view to generate this template](./tutorials/template.md#add-an-html-template-file-to-the-templates-directory)
+    4. [Pass a contextual object to the template containing a list of objects](./tutorials/template.md#pass-a-contextual-object-to-the-template-containing-a-list-of-objects)
+    5. [Iterate over a list in a template](./tutorials/template.md#iterate-over-a-list-in-a-templates)
+    6. [Use a template filter (for example: truncate) in a template](./tutorials/template.md#use-a-template-filter-for-example-truncate-in-a-template)
+    7. [Time to Practice : Create Django templates for your pages!](./tutorials/template.md#time-to-practice--create-django-templates-for-your-pages)
+
