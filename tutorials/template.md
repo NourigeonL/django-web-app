@@ -1,5 +1,13 @@
 # Separate the application logic from the presentation with a Django template
 
+1. [Understand templates](#understand-templates)
+2. [Add an HTML template file to the templates directory](#add-an-html-template-file-to-the-templates-directory)
+3. [Update the view to generate this template](#add-an-html-template-file-to-the-templates-directory)
+4. [Pass a contextual object to the template containing a list of objects](#pass-a-contextual-object-to-the-template-containing-a-list-of-objects)
+5. [Iterate over a list in a template](#iterate-over-a-list-in-a-templates)
+6. [Use a template filter (for example: truncate) in a template](#use-a-template-filter-for-example-truncate-in-a-template)
+7. [Time to Practice : Create Django templates for your pages!](#time-to-practice--create-django-templates-for-your-pages)
+
 # Understand templates
 
 We will start this chapter by demonstrating an anti-pattern.

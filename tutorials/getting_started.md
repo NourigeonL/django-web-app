@@ -1,5 +1,10 @@
 # Getting started
 
+1. [Install Django](#install-django)
+2. [Configure a new project with Django](#configure-a-new-project-with-django)
+3. [Create the database for the project](#create-the-database-for-the-project)
+4. [Create a Django application](#create-a-django-application-to-the-project)
+
 # Install Django
 
 Create a virtual environment

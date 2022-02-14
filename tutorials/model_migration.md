@@ -1,5 +1,12 @@
 # Save data to a database with a model and a migration
 
+1. [Add a model at models.py](#add-a-model-at-modelspy)
+2. [Understand how to manage database status with a migration](#understand-how-to-manage-database-status-with-a-migration)
+3. [Call *migrate* with the CLI](#call-migrate-with-the-cli)
+4. [Register objects in the database in the Django shell](#register-objects-in-the-database-in-the-django-shell)
+5. [Update the view to show *Band* objects](#update-the-view-to-show-band-objects)
+6. [Time to Practice : Create new model!](#time-to-practice--create-new-model)
+
 # Add a model at models.py
 
 Open `models.py` that looks like this :

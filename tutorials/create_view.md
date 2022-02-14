@@ -1,5 +1,8 @@
 # Serve content using a view
 
+1. [Display a new page in 5 lines of code !](#display-a-new-page-in-5-lines-of-code)
+2. [Time to Practice : Create new views!](#time-to-practice--create-new-views)
+
 # Display a new page in 5 lines of code !
 
 Open the file `listings/views.py`. For now it looks like this:
