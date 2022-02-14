@@ -2,7 +2,7 @@
 
 # Add a model at models.py
 
-Open *models.py* that looks like this :
+Open `models.py` that looks like this :
 ```python
 from django.db import models
 
@@ -10,7 +10,7 @@ from django.db import models
 
 ```
 
-Create a class called *Band* like this :
+Create a class called `Band` like this :
 ```python
 class Band(models.Model):
     name = models.fields.CharField(max_length=100)
@@ -41,19 +41,19 @@ Now that we know why migrations are important, let's create one for our group mo
 ```sh
 python manage.py makemigrations
 ```
-The CLI output tells us that a new migration has been registered in "listings/migrations/0001_initial.py", and that its purpose is to "Create the group model", which actually means that this migration will create a table in the database for our group model.
+The CLI output tells us that a new migration has been registered in `listings/migrations/0001_initial.py`, and that its purpose is to "Create the Band model", which actually means that this migration will create a table in the database for our Band model.
 
-The advantage of this command is that it scans our models.py file for any changes and determines the type of migration to generate.
+The advantage of this command is that it scans our `models.py` file for any changes and determines the type of migration to generate.
 
 Now that we have our migration (our instructions), we need to execute these instructions on the database.
 
-# Call *migrate* with the CLI
+# Call `migrate` with the CLI
 
 ```sh
 python manage.py migrate
 ```
 
-Remember in the installation chapter when we added "listings" to the INSTALLED_APPS of our project? Django searched each of those installed applications for new migrations to run, found our new migration, and "applied" it: it executed those instructions on the database.
+Remember in the installation chapter when we added `listings` to the `INSTALLED_APPS` of our project? Django searched each of those installed applications for new migrations to run, found our new migration, and "applied" it: it executed those instructions on the database.
 
 We are finally ready to use our model to create group objects!
 
@@ -61,11 +61,11 @@ We are finally ready to use our model to create group objects!
 
 In this section, we will write code in the Django shell.
 
-The Django shell is simply an ordinary Python shell that runs your Django application. You can think of it as a place where you can try out code in real time: every time you press Enter, the line of code you just typed is executed. So while code you type in a Python module/file may be executed many times, code you type in the Django shell is executed only once and then forgotten.
+The Django shell is simply an ordinary Python shell that runs your Django application. You can think of it as a place where you can try out code in real time: every time you press Enter, the line of code you just typed is executed. So while code you type in a Python `module/file` may be executed many times, code you type in the Django shell is executed only once and then forgotten.
 
 Let's use the shell to create some group objects, then save those objects to the database.
 
-You can use my examples, or feel free to add your own favorite bands, musicians or composers!
+You can use these examples, or feel free to add your own favorite bands, musicians or composers!
 
 Open the shell using the command line utility :
 ```sh
@@ -84,7 +84,7 @@ Next, we will create a new instance of the Band model:
 >>> band = Band()
 >>> band.name = 'De La Soul'
 ```
-Take a look at the current status of the object by simply typing **band**:
+Take a look at the current status of the object by simply typing `band`:
 ```sh
 >>> band
 <Band: Band object (None)>
@@ -100,9 +100,9 @@ Now let's save this object in the database:
 >>> band
 <Band: Band object (1)>
 ```
-... now the id is **1**.
+... now the id is `1`.
 
-Let's start again, this time giving a different name to the *Band* object. You can reuse the band variable and give it a new *Band* :
+Let's start again, this time giving a different name to the *Band* object. You can reuse the band variable and give it a new `Band` :
 ```sh
 >>> band = Band()
 >>> band.name = 'Cut Copy'
@@ -115,7 +115,7 @@ Now let's try another method. Here is a one-line alternative that does the same 
 >>> band = Band.objects.create(name='Foo Fighters')
 ```
 
-We can look at the object and the value of its *name* field:
+We can look at the object and the value of its `name` field:
 ```sh
 >>> band
 <Band: Band object (3)>
@@ -131,17 +131,17 @@ Our database now contains 3 group objects. We can check this like this:
 <QuerySet [<Band: Band object (1)>, <Band: Band object (2)>, <Band: Band object (3)>]>
 ```
 
-Press Ctrl + D or write **exit()** to exit the shell.
+Press Ctrl + D or write `exit()` to exit the shell.
 
-# Update the view to show *Band* objects
+# Update the view to show `Band` objects
 
-Open listings/views.py and find our *hello* view function, as we left it in the last chapter:
+Open `listings/views.py` and find our `hello` view function, as we left it in the last chapter:
 ```python
 def hello(request):
   return HttpResponse('<h1>Hello Django!</h1>')
 ```
 
-In the previous section, we saw how to get all group objects from the database in the shell :Band.objects.all(). Let's do the same thing in our view and store the objects in a variable :
+In the previous section, we saw how to get all group objects from the database in the shell :`Band.objects.all()`. Let's do the same thing in our view and store the objects in a variable :
 ```python
 ...
 from listings.models import Band
@@ -150,9 +150,9 @@ def hello(request):
   bands = Band.objects.all()
   return HttpResponse('<h1>Hello Django!</h1>')
 ```
-Don't forget to import your *Band* model at the top!
+Don't forget to import your `Band` model at the top!
 
-The *bands* variable now contains a list of all the bands that can be found in the database. This means that it is now possible to access each of the individual band objects using Python's index notation, like this:
+The `bands` variable now contains a list of all the bands that can be found in the database. This means that it is now possible to access each of the individual band objects using Python's index notation, like this:
 ```python
 # example
 
@@ -161,7 +161,7 @@ bands[1] # for the second one..
 bands[2] # et the third one...
 ```
 
-Then, to access the "name" field of one of theseBand objects, we will call the name attribute of the object using Python's dot notation, as we would with any other object:
+Then, to access the `name` field of one of theseBand objects, we will call the name attribute of the object using Python's dot notation, as we would with any other object:
 ```python
 # example
 
@@ -178,7 +178,7 @@ def hello(request):
   bands = Band.objects.all()
   return HttpResponse(f"""
     <h1>Hello Django !</h1>
-    <p>My favorite groups are :<p>
+    <p>My favorite bands are :<p>
     <ul>
       <li>{bands[0].name}</li>
       <li>{bands[1].name}</li>
@@ -190,7 +190,7 @@ To help with readability, we have:
 
 - used triple quotes (""") to spread our HTML string over several lines;
 
-- made this string an "f-string" (f""") so that we can inject our group names into the string using{ ... }as placeholders.
+- made this string an `f-string` (f""") so that we can inject our group names into the string using{ ... }as placeholders.
 
 Let's look at this page again in the browser:[ http://127.0.0.1:8000/hello/]( http://127.0.0.1:8000/hello/)
 
