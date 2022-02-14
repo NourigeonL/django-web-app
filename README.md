@@ -26,4 +26,8 @@ This tutorial is a summary of [this tutorial](https://openclassrooms.com/fr/cour
     5. [Iterate over a list in a template](./tutorials/template.md#iterate-over-a-list-in-a-templates)
     6. [Use a template filter (for example: truncate) in a template](./tutorials/template.md#use-a-template-filter-for-example-truncate-in-a-template)
     7. [Time to Practice : Create Django templates for your pages!](./tutorials/template.md#time-to-practice--create-django-templates-for-your-pages)
-
+5. [Add structure and style to your site with a basic template, CSS and static files](./tutorials/statics_files.md#add-structure-and-style-to-your-site-with-a-basic-template-css-and-static-files)
+    1. [Separate site-wide HTML from page-specific HTML](./tutorials/statics_files.md#separate-site-wide-html-from-page-specific-html)
+    2. [Enrich a basic template with a page model](./tutorials/statics_files.md#enrich-a-basic-template-with-a-page-model)
+    3. [Give style to your site with CSS](./tutorials/statics_files.md#give-style-to-your-site-with-css)
+    4. [Time to Practice : Make all your page templates enhance your base template!](./tutorials/statics_files.md#time-to-practice--make-all-your-page-templates-enhance-your-base-template)
