@@ -219,6 +219,6 @@ If you need directions, remember that you need to do the following for each temp
 - Use template tags to use loops in your template if needed.
 
 ---
-## Next Step : 
+## Next Step : [Add structure and style to your site with a basic template, CSS and static files](./statics_files.md#add-structure-and-style-to-your-site-with-a-basic-template-css-and-static-files)
 ### Previous step : [Save data to a database with a model and a migration](./model_migration.md#save-data-to-a-database-with-a-model-and-a-migration)
 ### [Back to menu](../README.md#django-tutorial)
