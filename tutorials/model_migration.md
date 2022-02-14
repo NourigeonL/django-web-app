@@ -195,7 +195,24 @@ To help with readability, we have:
 Let's look at this page again in the browser:[ http://127.0.0.1:8000/hello/]( http://127.0.0.1:8000/hello/)
 
 ![My favorites bands](./images/helloBandPage.PNG)
+
+# Time to Practice : Create new model!
+
+With what you've just learned, add a new model to your application. This model will follow the *Listing* objects. There should be only one field called *title*: the title of the listing. The *title* should have a maximum length of 100 characters.
+
+Your model will have to be accompanied by a migration, which will have to be executed on the database. You can then use the Django shell to insert at least 3 objects in the database.
+
+Some sample titles for these ads:
+
+    "ORIGINAL De La Soul Tour Poster - Fillmore Auditorium San Francisco November 2001"
+
+    "Cut Copy concert T-shirt, Free Your Mind tour, 2013"
+
+    "Foo Fighters - Big Me single promo poster, late 90s"
+
+    "Beethoven - Moonlight Sonata - original manuscript EXTREMELY RARE"
+
 ---
-## Next Step : []()
+## Next Step : [Separate the application logic from the presentation with a Django template](./template.md#separate-the-application-logic-from-the-presentation-with-a-django-template)
 ### Previous step : [Serve content using a view](./create_view.md#serve-content-using-a-view)
 ### [Back to menu](../README.md#django-tutorial)

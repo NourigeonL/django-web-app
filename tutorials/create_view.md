@@ -69,6 +69,14 @@ Try the new views : [http://localhost:8000/about-us/](http://localhost:8000/abou
 
 ![about-us page](./images/about-usPage.PNG)
 
+# Time to Practice : Create new views!
+
+With what you've just learned, add two new pages to your application. These are pages that we will build on in the following chapters.
+
+The two pages will be a "listings" page (where we will eventually display a list of ads for items) and a "contact us" page (where we will create a contact form). For now, these pages can be very simple: just an <h1> tag and a <p> tag. We will build the full content later in the course.
+
+You should visit these pages in the browser to make sure they display correctly.
+
 ---
 
 ## Next Step : [Save data to a database with a model and a migration](./model_migration.md#save-data-to-a-database-with-a-model-and-a-migration)
