@@ -59,7 +59,6 @@ class ApiImageViewSet(viewsets.ModelViewSet):
                     serializer.update(image, serializer.data)
                     return Response(serializer.data)
                 except IntegrityError as ie:
-                    print("errors !")
                     content = {'errors': 'data invalid',
                                'data': serializer.data}
                     return Response(
