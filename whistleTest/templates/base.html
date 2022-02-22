@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    {% if request.user.is_authenticated %}
+    <div>
+        <p>{{ request.user }}</p>
+        <a href="/logout">Logout</a>
+    </div>
+    {% endif %}
+    {% block content %}
+    {% endblock content %}
+</body>
+
+</html>

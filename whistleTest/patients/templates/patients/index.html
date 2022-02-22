@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if patient_list %}
+<table>
+  <thead>
+    <td>Id</td>
+    <td>last name</td>
+    <td>first name</td>
+    <td> sex</td>
+    <td>hypertension</td>
+  </thead>
+  {% for patient in patient_list %}
+  <tr>
+    <td><a href="{% url 'patients:detail' patient.id %}">{{patient.collector}}_{{patient.mr_code}}</a></td>
+    <td>{{patient.last_name}}</td>
+    <td>{{patient.first_name}}</td>
+    <td>{{patient.get_sex_display}}</td>
+    <td>{{patient.patientmedicalinfo.hypertension}}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p>No patients are available.</p>
+{% endif %}
+
+{% endblock %}

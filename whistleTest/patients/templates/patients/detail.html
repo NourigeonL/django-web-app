@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+<p>details of {{ patient }}</p>
+<table>
+    <th colspan="2">
+        Patient infos
+    </th>
+    <tr>
+        <th>Id</th>
+        <td>{{patient.collector}}_{{patient.mr_code}}</td>
+    </tr>
+    <tr>
+        <th>last name</th>
+        <td>{{patient.last_name}}</td>
+    </tr>
+    <tr>
+        <th>first name</th>
+        <td>{{patient.first_name}}</td>
+    </tr>
+    <tr>
+        <th> sex</th>
+        <td>{{patient.get_sex_display}}</td>
+    </tr>
+    <tr>
+        <th>hypertension</th>
+        <td>{{patient.patientmedicalinfo.hypertension}}</td>
+    </tr>
+    {% for img in image_list %}
+    <th colspan="2">
+        image : {{img.name}}
+    </th>
+    <tr>
+        <th>status </th>
+        <td>{{img.status}}</td>
+    </tr>
+    {% if img.status == 0 %}
+    <tr>
+        <th>result</th>
+        <td>{{img.final_result}}</td>
+    </tr>
+    {% endif %}
+    {% empty%}
+    <tr>
+        <td colspan="2">
+            No images
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="/patients">return to the list</a>
+{% endblock %}
