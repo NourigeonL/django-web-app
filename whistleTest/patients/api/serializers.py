@@ -53,7 +53,6 @@ class PatientSerializer(serializers.ModelSerializer):
     class Meta:
         model = Patient
         exclude = ['id']
-        # fields = '__all__'
 
     def update(self, instance, validated_data):
         medical_infos_data = validated_data.pop(

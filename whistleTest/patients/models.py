@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
 from django.utils.text import slugify
 from django.db.models.signals import pre_save, post_save
+from django.core.exceptions import ValidationError
 # Create your models here.
 
 
@@ -19,8 +20,8 @@ class Patient(models.Model):
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     birth_date = models.DateField()
-    phone_number = models.CharField(max_length=200)
-    health_insurence_number = models.CharField(max_length=200)
+    phone_number = models.CharField(max_length=200, blank=True)
+    health_insurance_number = models.CharField(max_length=200, blank=True)
     address = models.CharField(max_length=200, blank=True)
     registration_date = models.DateField(default=date.today)
     sex = models.IntegerField(choices=Sex.choices)
@@ -31,7 +32,7 @@ class Patient(models.Model):
                             allow_unicode=True)
 
     def __str__(self):
-        return "%s_%d %s %s" % (self.collector, self.mr_code, self.first_name, self.last_name)
+        return "%s_%d %s %s" % (self.collector, self.mr_code, self.last_name, self.first_name)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.collector.__str__() + "_" + str(self.mr_code))
@@ -70,6 +71,17 @@ class Image(models.Model):
 
     def __str__(self):
         return "%s_%s" % (self.patient. __str__(), self.name)
+
+    def validate_unique(self, exclude=None):
+        img = Image.objects.filter(patient=self.patient).filter(num=self.num)
+        if img is not None:
+            raise ValidationError('tuple (patient id, num) should be unique')
+
+    def save(self, *args, **kwargs):
+
+        self.validate_unique()
+
+        super(Image, self).save(*args, **kwargs)
 
 
 def patient_pre_save():
