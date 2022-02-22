@@ -53,8 +53,8 @@ class PatientMedicalInfo(models.Model):
     def __str__(self):
         return self.patient. __str__()
 
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     super().save(*args, **kwargs)
 
 
 class Image(models.Model):
@@ -74,8 +74,8 @@ class Image(models.Model):
 
     def validate_unique(self, exclude=None):
         img = Image.objects.filter(patient=self.patient).filter(num=self.num)
-        if img is not None:
-            raise ValidationError('tuple (patient id, num) should be unique')
+        # if img is not None:
+        #     raise ValidationError('tuple (patient id, num) should be unique')
 
     def save(self, *args, **kwargs):
 
